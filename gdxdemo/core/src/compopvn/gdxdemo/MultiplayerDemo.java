@@ -34,8 +34,8 @@ public class MultiplayerDemo extends ApplicationAdapter {
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		playerShip = new Texture("playerShip2.png");
-		friendlyShip = new Texture("playerShip.png");
+		playerShip = new Texture("amg3_fr1_tran.png");
+		friendlyShip = new Texture("avt4_fr1_tran.png");
 		friendlyPlayers = new HashMap<String, Starship>();
 		connectSocket();
 		configSocketEvents();
@@ -52,10 +52,10 @@ public class MultiplayerDemo extends ApplicationAdapter {
 				player.setPosition(player.getX() + (-200 * dt), player.getY());
 			} else if(Gdx.input.isKeyPressed(Input.Keys.RIGHT)){
 				player.setPosition(player.getX() + (+200 * dt), player.getY());
-			} else if(Gdx.input.isButtonPressed(Input.Buttons.RIGHT)){
-				player.setPosition(player.getX() + (+200 * dt), player.getY());
-			} else if(Gdx.input.isButtonPressed(Input.Buttons.LEFT)){
-				player.setPosition(player.getX() + (-200 * dt), player.getY());
+			} else if(Gdx.input.isKeyPressed(Input.Keys.UP)){
+				player.setPosition(player.getX(), player.getY()  + (+200 * dt));
+			} else if(Gdx.input.isKeyPressed(Input.Keys.DOWN)){
+				player.setPosition(player.getX(), player.getY()  + (-200 * dt));
 			}
 		}
 	}
